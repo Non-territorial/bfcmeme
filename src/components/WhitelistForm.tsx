@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { mockContract } from "@/utils/mockContract"; // Import the mock contract
 import Image from "next/image";
 
 interface Fart {
@@ -13,12 +12,14 @@ interface Fart {
 
 export default function WhitelistPage() {
   const [wallet, setWallet] = useState("");
+  const [status, setStatus] = useState<string | null>(null);
   const [farts, setFarts] = useState<Fart[]>([]);
   const [fartId, setFartId] = useState(0);
 
-  // If you want the cow to move or have a position, define it here:
+  // Static cow position (if needed for animation)
   const cowPosition = { x: 50, y: 50 };
 
+  // Handle whitelist join by sending the wallet address to the API
   const handleWhitelistJoin = async () => {
     console.log("Wallet Input:", wallet);
 
@@ -28,42 +29,40 @@ export default function WhitelistPage() {
     }
 
     try {
-      // Use mockContract instead of making a real API request
-      const data = await mockContract.claimFreeCow();
-
-      if (data.success) {
-        alert("You're on the whitelist! 🎉");
-      } else {
-        alert(data.message || "Something went wrong.");
-      }
+      const res = await fetch("/api/whitelist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ wallet }),
+      });
+      const data = await res.json();
+      setStatus(data.message);
     } catch (error) {
       console.error("Whitelist request failed:", error);
-      alert("Mock contract error, try again.");
+      alert("Error submitting wallet. Please try again.");
     }
   };
 
+  // Generate animated farts every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      // Generate **MEGA FART** 💨
       setFarts((prevFarts) => [
         ...prevFarts,
         {
           id: fartId,
-          x: cowPosition.x - 80, // Goes much further left
-          y: cowPosition.y + 70, // Goes much lower
+          x: cowPosition.x - 80,
+          y: cowPosition.y + 70,
         },
       ]);
 
       setFartId((prevId) => prevId + 1);
 
-      // Remove farts after 2 seconds
+      // Remove the oldest fart after 2 seconds
       setTimeout(() => {
         setFarts((prevFarts) => prevFarts.slice(1));
       }, 2000);
-    }, 3000); // Generate new fart every 3 sec
+    }, 3000);
 
     return () => clearInterval(interval);
-    // Include dependencies so ESLint doesn't complain:
   }, [fartId, cowPosition.x, cowPosition.y]);
 
   return (
@@ -137,6 +136,7 @@ export default function WhitelistPage() {
         >
           Join Whitelist 🚀🐄
         </button>
+        {status && <p className="mt-4 text-white">{status}</p>}
       </div>
     </section>
   );
