@@ -171,7 +171,7 @@ export default function Marketplace() {
 
         {/* Right Section */}
         <div className="absolute right-6 flex items-center space-x-4">
-          <Link href="#socials" className="text-white hover:text-yellow-400">
+          <Link href="https://x.com/BfcMeme1681" className="text-white hover:text-yellow-400">
             X
           </Link>
           <Link href="#telegram" className="text-white hover:text-yellow-400">

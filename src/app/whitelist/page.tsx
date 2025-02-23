@@ -19,7 +19,7 @@ export default function WhitelistPage() {
 
   {/* Right Section */}
   <div className="flex items-center space-x-4">
-    <Link href="#socials" className="text-white hover:text-yellow-400">X</Link>
+    <Link href="https://x.com/BfcMeme1681" className="text-white hover:text-yellow-400">X</Link>
     <Link href="#telegram" className="text-white hover:text-yellow-400">TG</Link>
 
   </div>
