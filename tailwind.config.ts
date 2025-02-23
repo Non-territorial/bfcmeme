@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        hanzi: ["Hanzi Pen SC", "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

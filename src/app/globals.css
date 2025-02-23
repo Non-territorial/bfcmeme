@@ -19,3 +19,23 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+  font-family: "Hanzi Pen SC";
+  src: url("/fonts/hanzipen-sc-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hanzi Pen SC";
+  src: url("/fonts/hanzipen-sc-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: "Hanzi Pen SC", sans-serif;
+}
+
+

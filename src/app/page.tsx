@@ -1,101 +1,131 @@
+"use client";
+ 
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import About from "../components/About";
+import RoadmapTokenomics from "@/components/RoadmapTokenomics";
+import GasTrackerDisclaimer from "@/components/GasTrackerDisclaimer";
+import CowGallery from "../components/CowGallery";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [walletConnected, setWalletConnected] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  const connectWallet = async () => {
+    if (typeof window.ethereum !== "undefined") {
+      try {
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+        setWalletConnected(true);
+      } catch (error) {
+        console.error("Wallet connection failed", error);
+      }
+    } else {
+      alert("Please install MetaMask!");
+    }
+  };
+
+  return (
+    <div className="relative w-full min-h-screen bg-black text-white">
+     {/* Top Navbar */}
+<nav className="fixed top-0 left-0 w-full flex items-center justify-between px-4 py-2 bg-black z-50 border-b border-gray-700">
+  
+  {/* Left Section */}
+  <div className="flex items-center">
+    <Link href="/marketplace" className="text-white hover:text-yellow-400">GO TO MARKETPLACE</Link>
+  </div>
+
+  {/* Center Section */}
+  <div className="absolute left-1/2 transform -translate-x-1/2">
+    <Link href="/" className="text-xl font-bold text-white hover:text-yellow-400">BFCMEME</Link>
+  </div>
+
+  {/* Right Section */}
+  <div className="flex items-center space-x-4">
+    <Link href="#socials" className="text-white hover:text-yellow-400">X</Link>
+    <Link href="#telegram" className="text-white hover:text-yellow-400">TG</Link>
+    <button
+      onClick={connectWallet}
+      className="bg-black px-4 py-2 rounded-lg text-lg text-white hover:text-yellow-400 font-bold"
+    >
+      {walletConnected ? "Wallet Connected" : "Connect Wallet"}
+    </button>
+  </div>
+
+</nav>
+
+
+    {/* Hero Section */}
+<section className="relative w-full h-screen flex justify-center items-center bg-black">
+  <div className="absolute inset-0 flex justify-center items-center">
+    <Image
+      src="/images/BFC_MEME.png"
+      layout="intrinsic"
+      width={1920} // Adjust this to your actual image width
+      height={1080} // Adjust this to your actual image height
+      alt="Burping Cow"
+      className="max-w-full max-h-full"
+    />
+  </div>
+</section>
+
+
+
+
+      
+
+      {/* Bottom Navbar */}
+      <nav className="fixed bottom-0 left-0 w-full flex justify-center space-x-6 bg-black py-4 border-t border-gray-700 z-50">
+        <Link href="#about" className="text-white text-lg">About</Link>
+        <Link href="/whitepaper" className="text-white text-lg">Whitepaper</Link>
+        <Link href="#roadmaptokenomics" className="text-white text-lg">Tokenomics</Link>
+        <Link href="#roadmaptokenomics" className="text-white text-lg">Roadmap</Link>
+        <Link href="/whitelist" className="text-white text-lg">Whitelist</Link>
+        <Link href="#roadmaptokenomics" className="text-white text-lg">How to Buy</Link>
+        <Link href="/gas-tracker" className="text-white text-lg">Gas Emission Tracker</Link>
+        <Link href="/disclaimer" className="text-white text-lg">Disclaimer</Link>
+      </nav>
+
+      {/* Scrollable Sections */}
+      <section id="about" className="min-h-screen flex justify-center items-center">
+      <About /> 
+      </section>
+      <section id="cowgallery" className="min-h-screen flex justify-center items-center">
+      <CowGallery />
+      </section>
+      <section id="roadmaptokenomics" className="min-h-screen flex justify-center items-center">
+      <RoadmapTokenomics />  
+      </section>
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-start bg-black text-white">
+    {/* Background Video */}
+    <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+    >
+        <source src="/gas-cow.webm" type="video/webm" />
+        <source src="/gas-cow.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    {/* Content on top of video */}
+    <div className="relative z-10 flex flex-col items-center justify-center pt-26 mt-4">
+        <h1 className="text-6xl font-bold mb-6 drop-shadow-lg">🐄 JOIN THE METHANE REVOLUTION 💨</h1>
+    </div>
+</section>
+
+
+
+      <section id="gastrackerdisclaimer" className="min-h-screen flex justify-center items-center bg-black">
+        <GasTrackerDisclaimer />
+      </section>
+      
     </div>
   );
 }
+
+    
+
+    
+  
