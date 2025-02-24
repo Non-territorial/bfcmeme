@@ -39,14 +39,14 @@ export default function Whitepaper() {
                         <ul className="text-2xl text-left mx-auto max-w-lg mb-6">
                             <li>✅ **40% - Mining Rewards** (fart-to-earn mechanics)</li>
                             <li>✅ **30% - Liquidity & Listings** (so degens can trade)</li>
-                            <li>✅ **20% - Marketing & Memes** (we need Twitter to talk about this)</li>
+                            <li>✅ **20% - Marketing & Memes** (we need X to talk about this)</li>
                             <li>✅ **10% - Development** (funding scientific research in advanced cow burping)</li>
                         </ul>
         
                         {/* New Section for Free 500 Cows */}
                         <h3 className="text-4xl font-bold text-green-400 mb-4">🎁 First 500 NFT Cows: Free Airdrop</h3>
                         <p className="text-2xl mb-6">
-                            To kickstart the **BFCMEME mining revolution**, the **first 500 NFT cows will be claimable for free** by early adopters.
+                            To kickstart the **BFCMEME mining revolution**, the **first 500 NFT cows will be claimable for free** by whitelisted addresses.
                         </p>
                         <ul className="text-2xl text-left mx-auto max-w-lg mb-6">
                             <li>✅ **Who Can Claim?**</li>
@@ -69,21 +69,21 @@ export default function Whitepaper() {
                         <h3 className="text-4xl font-bold mb-4">🌎 Roadmap: From Pasture to the Moon 🌕</h3>
                         <div className="text-left mx-auto max-w-lg">
                             <h4 className="text-3xl font-semibold text-yellow-400">📆 Phase 1: Meme Domination</h4>
-                            <ul className="mb-4">
-                                <li>- Deploy **$BFCMEME** on Ethereum or Solana.</li>
-                                <li>- **Meme Wars** begin on Twitter, Telegram, and TikTok.</li>
+                            <ul className="mb-4 text-xl">
+                                <li>- Deployment of **$BFCMEME** on Ethereum.</li>
+                                <li>- **Meme Wars** begin on X, Telegram, and Discord.</li>
                                 <li>- NFT Cow sale (some cows burp more = more mining power).</li>
                             </ul>
         
                             <h4 className="text-3xl font-semibold text-yellow-400">📆 Phase 2: Mining & Trading Begins</h4>
-                            <ul className="mb-4">
+                            <ul className="mb-4 text-xl">
                                 <li>- Official DEX launch (Uniswap, PancakeSwap).</li>
                                 <li>- Burp-to-Earn farming goes live.</li>
-                                <li>- First celebrity endorsement (Elon? MrBeast? We’ll see).</li>
+                                <li>- First celebrity endorsement.</li>
                             </ul>
         
                             <h4 className="text-4xl font-semibold text-yellow-400">📆 Phase 3: The Final Fart</h4>
-                            <ul className="mb-6">
+                            <ul className="mb-6 text-xl">
                                 <li>- **BFCMEME supply runs out**</li>
                                 <li>- Exchanges list BFCMEME as the greatest meme coin ever.</li>
                                 <li>- Cows celebrated as **pioneers of decentralized finance.**</li>
@@ -93,7 +93,7 @@ export default function Whitepaper() {
                         <h3 className="text-4xl font-bold mb-4">📢 Call to Action: Join the Fart-Powered Revolution</h3>
                         <p className="text-xl leading-relaxed mb-8">
                             $BFCMEME is <span className="italic">not financial advice</span> but it is <span className="font-bold">financial absurdity at its finest.</span>
-                            Ride the methane-fueled rocket while you still can. Once the last cow farts, it’s over.
+                             Ride the methane-fueled rocket while you still can. Once the last cow farts, it’s over.
                         </p>
         
                         <a href="#buy" className="bg-green-500 hover:bg-green-700 text-black font-bold py-3 px-6 rounded-lg text-xl">

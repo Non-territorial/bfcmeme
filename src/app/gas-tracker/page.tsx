@@ -54,7 +54,7 @@ export default function GasTrackerPage() {
                 {/* Right Section */}
                 <div className="flex items-center space-x-4">
                     <Link href="https://x.com/BfcMeme1681" target="_blank" className="text-white hover:text-yellow-400">X</Link>
-                    <Link href="https://t.me/yourtelegram" target="_blank" className="text-white hover:text-yellow-400">TG</Link>
+                    <Link href="https://t.me/bfcmeme" target="_blank" className="text-white hover:text-yellow-400">TG</Link>
                 </div>
             </nav>
 

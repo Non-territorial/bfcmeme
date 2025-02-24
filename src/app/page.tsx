@@ -2,27 +2,14 @@
  
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import About from "../components/About";
 import RoadmapTokenomics from "@/components/RoadmapTokenomics";
 import GasTrackerDisclaimer from "@/components/GasTrackerDisclaimer";
 import CowGallery from "../components/CowGallery";
+import WalletConnect from "@/components/WalletConnect";
 
 export default function Home() {
-  const [walletConnected, setWalletConnected] = useState(false);
 
-  const connectWallet = async () => {
-    if (typeof window.ethereum !== "undefined") {
-      try {
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-        setWalletConnected(true);
-      } catch (error) {
-        console.error("Wallet connection failed", error);
-      }
-    } else {
-      alert("Please install MetaMask!");
-    }
-  };
 
   return (
     <div className="relative w-full min-h-screen bg-black text-white">
@@ -43,12 +30,7 @@ export default function Home() {
   <div className="flex items-center space-x-4">
     <Link href="https://x.com/BfcMeme1681" className="text-white hover:text-yellow-400">X</Link>
     <Link href="#telegram" className="text-white hover:text-yellow-400">TG</Link>
-    <button
-      onClick={connectWallet}
-      className="bg-black px-4 py-2 rounded-lg text-lg text-white hover:text-yellow-400 font-bold"
-    >
-      {walletConnected ? "Wallet Connected" : "Connect Wallet"}
-    </button>
+    <WalletConnect />
   </div>
 
 </nav>

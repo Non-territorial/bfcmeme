@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import BuyButton from "@/components/BuyButton";
 
+
 interface NFT {
   id: number;
   image: string;
@@ -13,6 +14,8 @@ interface NFT {
   description: string;
   // include any additional fields from your metadata if needed
 }
+
+
 
 const METADATA_CID = "bafybeifrrm7ifyife2ywj7m7i3b2uhnfum2uqz476wm46hlt663q4dd7nm";
 const COW_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_COW_CONTRACT_ADDRESS || "";
@@ -51,61 +54,61 @@ export default function Marketplace() {
   const [walletConnected, setWalletConnected] = useState(false);
 
   // Connect Wallet
-  const connectWallet = async () => {
-    if (typeof window.ethereum !== "undefined") {
-      try {
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-        setWalletConnected(true);
-      } catch (error) {
-        console.error("Wallet connection failed", error);
-      }
-    } else {
-      alert("Please install MetaMask!");
-    }
-  };
-
-  // Check Whitelist
-  const checkWhitelist = async () => {
-    if (!COW_CONTRACT_ADDRESS) {
-      console.log("COW_CONTRACT_ADDRESS is empty, skipping whitelist check.");
-      return false;
-    }
-    if (typeof window === "undefined" || !window.ethereum) {
-      console.error("Ethereum provider not found");
-      return false;
-    }
+const connectWallet = async () => {
+  if (typeof window.ethereum !== "undefined") {
     try {
-      const provider = new ethers.BrowserProvider(window.ethereum);
-      const signer = await provider.getSigner();
-      const contract = new ethers.Contract(COW_CONTRACT_ADDRESS, ABI, signer);
-      const address = await signer.getAddress();
-      // Assuming the contract has an isWhitelisted method
-      return await contract.isWhitelisted(address);
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+      setWalletConnected(true);
     } catch (error) {
-      console.error("Whitelist check failed", error);
-      return false;
+      console.error("Wallet connection failed", error);
     }
-  };
+  } else {
+    alert("Please install MetaMask!");
+  }
+};
 
-  // Claim Free Cow
-  const claimFreeCow = async () => {
-    if (!window.ethereum || !COW_CONTRACT_ADDRESS) {
-      return alert("Please connect your wallet or wait for contract deployment");
-    }
-    setLoading(true);
-    try {
-      const provider = new ethers.BrowserProvider(window.ethereum);
-      const signer = await provider.getSigner();
-      const contract = new ethers.Contract(COW_CONTRACT_ADDRESS, ABI, signer);
-      const tx = await contract.claimFreeCow();
-      await tx.wait();
-      alert("Successfully claimed a free BFCMEME Cow!");
-    } catch (error) {
-      console.error("Claim failed", error);
-      alert("Claim failed. You may not be whitelisted or another error occurred. Check console for details.");
-    }
-    setLoading(false);
-  };
+// Check Whitelist
+const checkWhitelist = async () => {
+  if (!COW_CONTRACT_ADDRESS) {
+    console.log("COW_CONTRACT_ADDRESS is empty, skipping whitelist check.");
+    return false;
+  }
+  if (typeof window === "undefined" || !window.ethereum) {
+    console.error("Ethereum provider not found");
+    return false;
+  }
+  try {
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    const signer = await provider.getSigner();
+    const contract = new ethers.Contract(COW_CONTRACT_ADDRESS, ABI, signer);
+    const address = await signer.getAddress();
+    // Assuming the contract has an isWhitelisted method
+    return await contract.isWhitelisted(address);
+  } catch (error) {
+    console.error("Whitelist check failed", error);
+    return false;
+  }
+};
+
+// Claim Free Cow
+const claimFreeCow = async () => {
+  if (!window.ethereum || !COW_CONTRACT_ADDRESS) {
+    return alert("Please connect your wallet or wait for contract deployment");
+  }
+  setLoading(true);
+  try {
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    const signer = await provider.getSigner();
+    const contract = new ethers.Contract(COW_CONTRACT_ADDRESS, ABI, signer);
+    const tx = await contract.claimFreeCow();
+    await tx.wait();
+    alert("Successfully claimed a free BFCMEME Cow!");
+  } catch (error) {
+    console.error("Claim failed", error);
+    alert("Claim failed. You may not be whitelisted or another error occurred. Check console for details.");
+  }
+  setLoading(false);
+};
 
  // const buyNFT = async (id: number) => {
 //   alert(`Buying is not available until the contract is deployed. NFT #${id} is not for sale yet.`);
@@ -174,7 +177,7 @@ export default function Marketplace() {
           <Link href="https://x.com/BfcMeme1681" className="text-white hover:text-yellow-400">
             X
           </Link>
-          <Link href="#telegram" className="text-white hover:text-yellow-400">
+          <Link href="https://t.me/bfcmeme" className="text-white hover:text-yellow-400">
             TG
           </Link>
           <button
