@@ -1,5 +1,6 @@
 
 
+import BuyButton from "./BuyButton";
 
 
 export default function Whitepaper() {
@@ -95,10 +96,10 @@ export default function Whitepaper() {
                             $BFCMEME is <span className="italic">not financial advice</span> but it is <span className="font-bold">financial absurdity at its finest.</span>
                              Ride the methane-fueled rocket while you still can. Once the last cow farts, it’s over.
                         </p>
-        
-                        <a href="#buy" className="bg-green-500 hover:bg-green-700 text-black font-bold py-3 px-6 rounded-lg text-xl">
-                            Buy Before the Final Burp! 💨💰
-                        </a>
+                          
+                        {/* Buy Button with specific text */}
+                        <BuyButton text="Buy Before the Final Burp! 💨💰" className="bg-green-700 hover:bg-green-900" />
+                         
                     </div>
                 </section>
             );
