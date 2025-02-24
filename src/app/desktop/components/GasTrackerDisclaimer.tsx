@@ -46,7 +46,7 @@ export default function GasTrackerDisclaimer() {
                     Track the total methane emissions produced by NFT cows.
                 </p>
 
-                <Link href="/gas-tracker">
+                <Link href="/desktop/gas-tracker">
                     <button className="mt-6 bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-6 rounded-lg text-xl">
                         Track Emissions 📊
                     </button>
@@ -76,7 +76,7 @@ export default function GasTrackerDisclaimer() {
                     $BFCMEME is a meme coin. Not financial advice. Just farts.
                 </p>
 
-                <Link href="/disclaimer">
+                <Link href="/desktop/disclaimer">
                     <button className="mt-6 bg-red-500 hover:bg-red-600 text-black font-bold py-3 px-6 rounded-lg text-xl">
                         Read Disclaimer 📜
                     </button>

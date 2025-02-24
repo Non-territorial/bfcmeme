@@ -40,7 +40,7 @@ export default function RoadmapTokenomics() {
                 </ul>
 
                 {/* Whitelist CTA Button */}
-                <Link href="/whitelist">
+                <Link href="/desktop/whitelist">
                     <button className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg text-xl">
                         Join Whitelist 🚀
                     </button>
@@ -74,7 +74,7 @@ export default function RoadmapTokenomics() {
 
                 {/* Buttons for Opensea & Exchange */}
                 <div className="flex flex-col space-y-4">
-                    <a href="/marketplace" target="_blank" rel="noopener noreferrer">
+                    <a href="/desktop/marketplace" target="_blank" rel="noopener noreferrer">
                         <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg">
                             Buy NFTs on Marketplace 🎨
                         </button>

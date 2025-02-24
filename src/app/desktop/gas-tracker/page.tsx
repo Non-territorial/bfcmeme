@@ -43,7 +43,7 @@ export default function GasTrackerPage() {
             <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 bg-black z-50 border-b border-gray-700">
                 {/* Left Section */}
                 <div className="flex items-center">
-                    <Link href="/marketplace" className="text-white font-semibold hover:text-yellow-400">GO TO MARKETPLACE</Link>
+                    <Link href="/desktop/marketplace" className="text-white font-semibold hover:text-yellow-400">GO TO MARKETPLACE</Link>
                 </div>
 
                 {/* Center Section */}

@@ -1,4 +1,4 @@
-import Whitepaper from "../../components/Whitepaper"; // Adjust the path if needed
+import Whitepaper from "../components/Whitepaper"; // Adjust the path if needed
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,7 +9,7 @@ export default function WhitepaperPage() {
             <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 bg-black z-50 border-b border-gray-700">
                 {/* Left Section */}
                 <div className="flex items-center">
-                    <Link href="/marketplace" className="text-white hover:text-yellow-400">GO TO MARKETPLACE</Link>
+                    <Link href="/desktop/marketplace" className="text-white hover:text-yellow-400">GO TO MARKETPLACE</Link>
                 </div>
 
                 {/* Center Section */}

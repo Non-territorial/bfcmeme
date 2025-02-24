@@ -134,7 +134,7 @@ export default function WhitelistPage() {
           onClick={handleWhitelistJoin}
           className="w-full bg-green-500 hover:bg-green-700 text-black font-bold py-3 px-6 rounded-lg text-xl"
         >
-          Join Whitelist 🚀🐄
+          Get Whitelisted 🚀🐄
         </button>
         {status && <p className="mt-4 text-white">{status}</p>}
       </div>

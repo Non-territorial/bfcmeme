@@ -12,7 +12,7 @@ export default function DisclaimerPage() {
   
   {/* Left Section */}
   <div className="flex items-center">
-    <Link href="/marketplace" className="text-white hover:text-yellow-400">GO TO MARKETPLACE</Link>
+    <Link href="/desktop/marketplace" className="text-white hover:text-yellow-400">GO TO MARKETPLACE</Link>
   </div>
 
   {/* Center Section */}

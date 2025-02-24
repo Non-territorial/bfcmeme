@@ -2,11 +2,11 @@
  
 import Image from "next/image";
 import Link from "next/link";
-import About from "../components/About";
-import RoadmapTokenomics from "@/components/RoadmapTokenomics";
-import GasTrackerDisclaimer from "@/components/GasTrackerDisclaimer";
-import CowGallery from "../components/CowGallery";
-import WalletConnect from "@/components/WalletConnect";
+import About from "./desktop/components/About";
+import RoadmapTokenomics from "@/app/desktop/components/RoadmapTokenomics";
+import GasTrackerDisclaimer from "@/app/desktop/components/GasTrackerDisclaimer";
+import CowGallery from "./desktop/components/CowGallery";
+import WalletConnect from "@/app/desktop/components/WalletConnect";
 
 export default function Home() {
 
@@ -55,17 +55,7 @@ export default function Home() {
 
       
 
-      {/* Bottom Navbar */}
-      <nav className="fixed bottom-0 left-0 w-full flex justify-center space-x-6 bg-black py-4 border-t border-gray-700 z-50">
-        <Link href="#about" className="text-white text-lg">About</Link>
-        <Link href="/whitepaper" className="text-white text-lg">Whitepaper</Link>
-        <Link href="#roadmaptokenomics" className="text-white text-lg">Tokenomics</Link>
-        <Link href="#roadmaptokenomics" className="text-white text-lg">Roadmap</Link>
-        <Link href="/whitelist" className="text-white text-lg">Whitelist</Link>
-        <Link href="#roadmaptokenomics" className="text-white text-lg">How to Buy</Link>
-        <Link href="/gas-tracker" className="text-white text-lg">Gas Emission Tracker</Link>
-        <Link href="/disclaimer" className="text-white text-lg">Disclaimer</Link>
-      </nav>
+     
 
       {/* Scrollable Sections */}
       <section id="about" className="min-h-screen flex justify-center items-center">
@@ -102,6 +92,19 @@ export default function Home() {
       <section id="gastrackerdisclaimer" className="min-h-screen flex justify-center items-center bg-black">
         <GasTrackerDisclaimer />
       </section>
+
+
+       {/* Bottom Navbar */}
+       <nav className="fixed bottom-0 left-0 w-full flex justify-center space-x-6 bg-black py-4 border-t border-gray-700 z-50">
+        <Link href="#about" className="text-white text-lg">About</Link>
+        <Link href="/desktop/whitepaper" className="text-white text-lg">Whitepaper</Link>
+        <Link href="#roadmaptokenomics" className="text-white text-lg">Tokenomics</Link>
+        <Link href="#roadmaptokenomics" className="text-white text-lg">Roadmap</Link>
+        <Link href="/desktop/whitelist" className="text-white text-lg">Whitelist</Link>
+        <Link href="#roadmaptokenomics" className="text-white text-lg">How to Buy</Link>
+        <Link href="/desktop/gas-tracker" className="text-white text-lg">Gas Emission Tracker</Link>
+        <Link href="/desktop/disclaimer" className="text-white text-lg">Disclaimer</Link>
+      </nav>
       
     </div>
   );
