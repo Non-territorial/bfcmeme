@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "BFCMEME",
   description: "The first meme coin powered by methane emissions",
   icons: {
-  icon: "/favicon.ico", // This ensures the favicon is properly loaded
+  icon: "/favicon.png", // This ensures the favicon is properly loaded
   }
 };
 
