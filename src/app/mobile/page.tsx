@@ -6,18 +6,19 @@ import MobileRoadmapTokenomics from "@/app/mobile/components/MobileRoadmapTokeno
 import MobileGasTrackerDisclaimer from "@/app/mobile/components/MobileGasTrackerDisclaimer";
 import CowGallery from "@/app/desktop/components/CowGallery";
 import WalletConnect from "@/app/desktop/components/WalletConnect";
+import Link from "next/link";
+
 
 export default function MobileHome() {
+  
   return (
     <div className="relative w-full min-h-screen bg-black text-white overflow-hidden">
       {/* 🚀 Fix Horizontal Scrolling */}
       <div className="w-full overflow-x-hidden">
 
-      <section className="w-full flex justify-center items-center py-4">
+      <section className="w-full flex justify-center items-center py-2">
   <WalletConnect />
 </section>
-
-
         {/* Hero Section (Mobile Only) */}
         <section className="relative w-full min-h-[50vh] flex items-center justify-center bg-black overflow-hidden">
           <Image
@@ -31,7 +32,7 @@ export default function MobileHome() {
         </section>
 
         {/* Scrollable Sections */}
-        <section id="about" className="w-full min-h-screen flex justify-center items-center">
+        <section id="MobileAbout" className="w-full min-h-screen flex justify-center items-center">
           <MobileAbout />
         </section>
 
@@ -39,7 +40,7 @@ export default function MobileHome() {
           <CowGallery />
         </section>
 
-        <section id="roadmaptokenomics" className="w-full min-h-screen flex justify-center items-center">
+        <section id="MobileRoadmapTokenomics" className="w-full min-h-screen flex justify-center items-center">
           <MobileRoadmapTokenomics />
         </section>
 

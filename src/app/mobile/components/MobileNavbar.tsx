@@ -25,8 +25,8 @@ export default function MobileNavbar() {
           <Link href="/mobile/gas-tracker" className="block py-2 text-red-600">Gas Emission Tracker</Link>
           <Link href="/mobile/whitepaper" className="block py-2 text-green-700">Whitepaper</Link>
           <Link href="/mobile/disclaimer" className="block py-2 text-yellow-500">Disclaimer</Link>
-          <Link href="#MobileAbout" className="block py-2  text-orange-600">About</Link>
-          <Link href="#MobileRoadmapTokenomics" className="block py-2 text-pink-500">Roadmap/Tokenomics</Link>
+          <Link href="/mobile#MobileAbout" className="block py-2 text-orange-500">About</Link>
+          <Link href="/mobile#MobileRoadmapTokenomics" className="block py-2 text-purple-600">Roadmap/Tokenomics</Link>
         </div>
       )}
     </nav>
