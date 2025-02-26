@@ -6,7 +6,6 @@ import MobileRoadmapTokenomics from "@/app/mobile/components/MobileRoadmapTokeno
 import MobileGasTrackerDisclaimer from "@/app/mobile/components/MobileGasTrackerDisclaimer";
 import CowGallery from "@/app/desktop/components/CowGallery";
 import WalletConnect from "@/app/desktop/components/WalletConnect";
-import Link from "next/link";
 
 
 export default function MobileHome() {
